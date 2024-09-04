@@ -10,31 +10,76 @@
 </head>
 
 <body>
-	<div class="d-flex justify-content-center">
+	<div class="container">
 		<form id="dataInput" action="/" method="post">
-			<div class="row mb-3">
-				<div class="input-group col-sm-2 col-form-label">
-					<label for="deviceIMEI" class="me-3">IMEI</label>
-					<input type="text" class="form-control" name="deviceIMEI" id="deviceIMEI" value="351091217585771" required>
+			<div class="row my-3 darkerBG rounded">
+				<div class="col-md-4 my-3">
+					<label class="col-form-label" for="imei" >IMEI</label>
 				</div>
-				<div class="col-sm-2 col-form-label">
-					<label for="colourSelect">Colour</label>
-					<div class="form-text">product(Red)</div>
-				</div>
-				<div class="col-sm-10">
-					<select class="form-select" name="colour"  id="colourSelect" required>
-						<option disabled selected value></option>
-						<option value="Black">Black</option>
-						<option value="White">White</option>
-						<option value="Yellow">Yellow</option>
-						<option value="Green">Green</option>
-						<option value="Purple">Purple</option>
-						<option value="Red">Red</option>
-					</select>
+				<div class="col-md-4 my-3">
+					<input type="text" class="form-control" name="imei" id="imei" value="351091217585771" required>
 				</div>
 			</div>
+			
+			<div class="row mb-3 darkerBG rounded">
+				<div class="row">
+					<div class="col-md-4 my-3">
+						<label class="col-form-label" for="modelSelect">Model</label>
+					</div>
+					<div class="col-md-4 my-3">
+						<select class="form-select" name="model" id="modelSelect" required>
+							<option disabled selected value>Please select a model..</option>
+							<% for(let model of modelArray) { %>
+								<option value="<%= model %>"><%= model%></option>
+							<% } %>
+						</select>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-4">
+						<label class="col-form-label" for="colourSelect">Colour</label>
+						<div class="form-text mb-3">product(red)</div>
+					</div>
+					<div class="col-md-4 my-3">
+						<select class="form-select" name="colour"  id="colourSelect" required>
+							<option disabled selected value></option>
+							<option value="Black">Black</option>
+							<option value="White">White</option>
+							<option value="Yellow">Yellow</option>
+							<option value="Green">Green</option>
+							<option value="Purple">Purple</option>
+							<option value="Red">Red</option>
+						</select>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-4">
+						<label class="col-form-label" for="conditionGroup">Condition</label>
+					</div>
+					<div class="col-md-4 mb-3">
+						<div class="btn-group" role="group">
+							<input type="radio" class="btn-check" name="condition" id="btnNone" autocomplete="off" value="None">
+							<label class="btn btn-light" for="btnNone">None</label>
+							
+							<input type="radio" class="btn-check" name="condition" id="btnLight" autocomplete="off" value="Light">
+							<label class="btn btn-success" for="btnLight">Light</label>
+							
+							<input type="radio" class="btn-check" name="condition" id="btnModerate" autocomplete="off" value="Moderate">
+							<label class="btn btn-warning" for="btnModerate">Moderate</label>
+							
+							<input type="radio" class="btn-check" name="condition" id="btnHeavy" autocomplete="off" value="Heavy">
+							<label class="btn btn-danger" for="btnHeavy">Heavy</label>
+						</div>
+					</div>
+				</div>
+			</div>
+				
 			<button type="submit" value="process" class="btn btn-primary">Process</button>
 		</form>
+	</div>
+	<div class="d-flex justify-content-center">
 	</div>
 </body>
 </html>
