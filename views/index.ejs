@@ -21,7 +21,8 @@
 				</div>
 			</div>
 			
-			<div class="row mb-3 darkerBG rounded">
+			<h5>Device Details</h5>
+			<div class="row mb-3 darkerBG rounded">				
 				<div class="row">
 					<div class="col-md-4 my-3">
 						<label class="col-form-label" for="modelSelect">Model</label>
@@ -31,6 +32,20 @@
 							<option disabled selected value>Please select a model..</option>
 							<% for(let model of modelArray) { %>
 								<option value="<%= model %>"><%= model%></option>
+							<% } %>
+						</select>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-4 my-3">
+						<label class="col-form-label" for="carrierSelect">Carrier</label>
+					</div>
+					<div class="col-md-4 my-3">
+						<select class="form-select" name="model" id="modelSelect" required>
+							<option disabled selected value>Please select a carrier..</option>
+							<% for(let carrier of carriers) { %>
+								<option value="<%= carrier %>"><%= carrier %></option>
 							<% } %>
 						</select>
 					</div>
@@ -53,29 +68,73 @@
 						</select>
 					</div>
 				</div>
+			</div>
+			
+			<h5 class="mb-3">Condition</h5>
+			<div class="row mb-3 darkerBG rounded">
+				<div class="row">
+					<div class="col-md-4">
+						<label class="col-form-label" for="screenGroup">Screen</label>
+					</div>
+					<div class="col-md-4 mb-3">
+						<div class="btn-group" role="group" id="screenGroup">
+							<input type="radio" class="btn-check" name="screenCondition" id="btnScreenNone" autocomplete="off" value="None">
+							<label class="btn btn-light" for="btnScreenNone">None</label>
+							
+							<input type="radio" class="btn-check" name="screenCondition" id="btnScreenLight" autocomplete="off" value="Light">
+							<label class="btn btn-success" for="btnScreenLight">Light</label>
+							
+							<input type="radio" class="btn-check" name="screenCondition" id="btnScreenModerate" autocomplete="off" value="Moderate">
+							<label class="btn btn-warning" for="btnScreenModerate">Moderate</label>
+							
+							<input type="radio" class="btn-check" name="screenCondition" id="btnScreenHeavy" autocomplete="off" value="Heavy">
+							<label class="btn btn-danger" for="btnScreenHeavy">Heavy</label>
+						</div>
+					</div>
+				</div>
 				
 				<div class="row">
 					<div class="col-md-4">
-						<label class="col-form-label" for="conditionGroup">Condition</label>
+						<label class="col-form-label" for="rearGroup">Rear Housing</label>
 					</div>
 					<div class="col-md-4 mb-3">
-						<div class="btn-group" role="group">
-							<input type="radio" class="btn-check" name="condition" id="btnNone" autocomplete="off" value="None">
-							<label class="btn btn-light" for="btnNone">None</label>
+						<div class="btn-group" role="group" id="rearGroup">
+							<input type="radio" class="btn-check" name="rearCondition" id="btnRearNone" autocomplete="off" value="None">
+							<label class="btn btn-light" for="btnRearNone">None</label>
 							
-							<input type="radio" class="btn-check" name="condition" id="btnLight" autocomplete="off" value="Light">
-							<label class="btn btn-success" for="btnLight">Light</label>
+							<input type="radio" class="btn-check" name="rearCondition" id="btnRearLight" autocomplete="off" value="Light">
+							<label class="btn btn-success" for="btnRearLight">Light</label>
 							
-							<input type="radio" class="btn-check" name="condition" id="btnModerate" autocomplete="off" value="Moderate">
-							<label class="btn btn-warning" for="btnModerate">Moderate</label>
+							<input type="radio" class="btn-check" name="rearCondition" id="btnRearModerate" autocomplete="off" value="Moderate">
+							<label class="btn btn-warning" for="btnRearModerate">Moderate</label>
 							
-							<input type="radio" class="btn-check" name="condition" id="btnHeavy" autocomplete="off" value="Heavy">
-							<label class="btn btn-danger" for="btnHeavy">Heavy</label>
+							<input type="radio" class="btn-check" name="rearCondition" id="btnRearHeavy" autocomplete="off" value="Heavy">
+							<label class="btn btn-danger" for="btnRearHeavy">Heavy</label>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-4">
+						<label class="col-form-label" for="bezelGroup">Bezels</label>
+					</div>
+					<div class="col-md-4 mb-3">
+						<div class="btn-group" role="group" id="bezelGroup">
+							<input type="radio" class="btn-check" name="bezelGroup" id="btnBezelNone" autocomplete="off" value="None">
+							<label class="btn btn-light" for="btnBezelNone">None</label>
+							
+							<input type="radio" class="btn-check" name="bezelGroup" id="btnBezelLight" autocomplete="off" value="Light">
+							<label class="btn btn-success" for="btnBezelLight">Light</label>
+							
+							<input type="radio" class="btn-check" name="bezelGroup" id="btnBezelModerate" autocomplete="off" value="Moderate">
+							<label class="btn btn-warning" for="btnBezelModerate">Moderate</label>
+							
+							<input type="radio" class="btn-check" name="bezelGroup" id="btnBezelHeavy" autocomplete="off" value="Heavy">
+							<label class="btn btn-danger" for="btnBezelHeavy">Heavy</label>
 						</div>
 					</div>
 				</div>
 			</div>
-				
 			<button type="submit" value="process" class="btn btn-primary">Process</button>
 		</form>
 	</div>

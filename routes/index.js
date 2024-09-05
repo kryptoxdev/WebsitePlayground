@@ -1,12 +1,14 @@
 var express = require('express');
 var router = express.Router();
-var models = require('../public/javascripts/iphoneModels.json')
+var models = require('../public/javascripts/iphoneModels.json');
+var carriers = require("../public/javascripts/carriers.json");
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
 	res.render('index', {
 		title: 'Website Playground',
-		modelArray: models
+		modelArray: models,
+		carriers: carriers
 	});
 });
 
