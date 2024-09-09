@@ -42,7 +42,7 @@
 						<label class="col-form-label" for="carrierSelect">Carrier</label>
 					</div>
 					<div class="col-md-4 my-3">
-						<select class="form-select" name="model" id="modelSelect" required>
+						<select class="form-select" name="carrier" id="carrierSelect" required>
 							<option disabled selected value>Please select a carrier..</option>
 							<% for(let carrier of carriers) { %>
 								<option value="<%= carrier %>"><%= carrier %></option>
@@ -72,11 +72,11 @@
 			
 			<h5 class="mb-3">Condition</h5>
 			<div class="row mb-3 darkerBG rounded">
-				<div class="row">
+				<div class="row my-3">
 					<div class="col-md-4">
 						<label class="col-form-label" for="screenGroup">Screen</label>
 					</div>
-					<div class="col-md-4 mb-3">
+					<div class="col-md-4">
 						<div class="btn-group" role="group" id="screenGroup">
 							<input type="radio" class="btn-check" name="screenCondition" id="btnScreenNone" autocomplete="off" value="None">
 							<label class="btn btn-light" for="btnScreenNone">None</label>
@@ -93,7 +93,7 @@
 					</div>
 				</div>
 				
-				<div class="row">
+				<div class="row" id="rearRow">
 					<div class="col-md-4">
 						<label class="col-form-label" for="rearGroup">Rear Housing</label>
 					</div>
@@ -114,7 +114,7 @@
 					</div>
 				</div>
 				
-				<div class="row">
+				<div class="row" id="bezelRow">
 					<div class="col-md-4">
 						<label class="col-form-label" for="bezelGroup">Bezels</label>
 					</div>
