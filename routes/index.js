@@ -5,10 +5,24 @@ var carriers = require("../public/javascripts/carriers.json");
 
 /* GET home page. */
 router.get('/phonecheck', function (req, res, next) {
+	const conditionGroupData = [
+		{ groupName: 'screen', label: 'Screen' },
+		{ groupName: 'rearHousing', label: 'Rear Housing' },
+		{ groupName: 'bezels', label: 'Bezels' }
+	  ];
+	
+	const conditionGroups = conditionGroupData.map((groupData) => ({
+		groupName: groupData.groupName,
+		label: groupData.label,
+		id: groupData.groupName,
+		conditionName: groupData.groupName
+	}));
+	
 	res.render('index', {
 		title: 'Website Playground',
 		modelArray: models,
-		carriers: carriers
+		carriers: carriers,
+		conditionGroups
 	});
 });
 
