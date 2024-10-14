@@ -80,14 +80,14 @@
 			<h5 class="mb-3">Condition</h5>
 			<div class="row mb-3 pt-3 darkerBG rounded">
 				<% for (let condition of conditionGroups) { %>
-					<div class="row">
+					<div class="row" id="<%= condition.id %>">
 						<div class="col-md-4">
 							<label class="col-form-label" for="<%= condition.id %>">
 								<%= condition.label %>
 							</label>
 						</div>
 						<div class="col-md-4 mb-3">
-							<div class="btn-group d-flex" role="group" id="<%= condition.id %>">
+							<div class="btn-group d-flex" role="group"">
 								<input type="radio" class="btn-check" name="<%= condition.conditionName %>"
 									id="btn<%= condition.id %>None" autocomplete="off" value="None">
 								<label class="btn btn-light" for="btn<%= condition.id %>None">None</label>
